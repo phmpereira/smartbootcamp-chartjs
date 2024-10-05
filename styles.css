@@ -2,4 +2,22 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+  text-align: center;
+}
+
+.graficos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+
+canvas{
+  width: 560px !important;
+  height: 280px !important;
 }

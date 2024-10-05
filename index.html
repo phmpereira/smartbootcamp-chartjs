@@ -5,8 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBootcamp | ChartJS</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    
+    <h1>Dashboard de Temperatura e Umidade da SPTech</h1>
+    <div class="graficos">
+      <canvas class="bar-graph" id="bar-graph"></canvas>
+      <canvas class="line-graph" id="line-graph"></canvas>
+    </div>
   </body>
 </html>
+<script>
+  const ctx = document.getElementById('bar-graph')
+  const ctx2 = document.getElementById('line-graph')
+
+  const bar_labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']
+  const temp_bar_values = [22, 24, 27, 23, 20, 18]
+  const umidade_bar_values = [90, 89, 93, 87, 88, 82]
+
+  const line_labels = ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00']
+  const temp_line_values = [30, 29, 28, 25, 22, 23]
+  const umidade_line_values = [80, 82, 80, 85, 80, 83]
+
+  const barGraph = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: bar_labels,
+          datasets: [{
+              label: 'Temperatura Média',
+              data: temp_bar_values,
+              backgroundColor: [
+                  '#ff0000'
+              ],
+            
+          }, {
+            label: 'Umidade Média',
+            data: umidade_bar_values,
+            backgroundColor: [
+                '#0000ff'
+            ],
+          }]
+      }
+    })
+
+    const lineGraph = new Chart(ctx2, {
+      type: 'line',
+      data: {
+          labels: bar_labels,
+          datasets: [{
+              label: 'Temperatura',
+              data: temp_line_values,
+              backgroundColor: [
+                  '#ff0000'
+              ],
+            
+          }, {
+            label: 'Umidade',
+            data: umidade_line_values,
+            backgroundColor: [
+                '#0000ff'
+            ],
+          }]
+      }
+    })
+</script>
